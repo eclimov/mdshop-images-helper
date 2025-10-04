@@ -9,8 +9,8 @@ def rename_files_in_directory(directory):
         if not os.path.isfile(old_path):
             continue
 
-        # Replace ' - ' with ',' in the filename
-        new_filename = filename.replace(' - ', ',')
+        # Replace ' - ' with '#' in the filename
+        new_filename = filename.replace(' - ', '#')
 
         # Only rename if there's an actual change
         if new_filename != filename:
