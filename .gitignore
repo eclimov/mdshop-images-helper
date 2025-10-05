@@ -1,4 +1,7 @@
 .idea
 .venv
 
-assets/
+assets/_products-icons-source/
+assets/products-icons-large/
+assets/products-icons-small/
+assets/screensaver/
