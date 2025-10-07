@@ -7,7 +7,7 @@ from PIL.Image import Resampling
 def resize_pngs_in_folder(
         input_dir="../assets/products-icons-large",
         output_dir="../assets/products-icons-small",
-        size=(64, 64)  # target resolution (width, height)
+        size=(48, 48)  # target resolution (width, height)
 ):
     """
     Resize all PNG images in the input directory and save to output directory.
@@ -24,7 +24,7 @@ def resize_pngs_in_folder(
             continue  # skip non-PNG files
 
         input_path = os.path.join(input_dir, filename)
-        output_path = os.path.join(output_dir, filename)
+        output_path = os.path.join(output_dir, filename.split('#')[0] + '.png')
 
         try:
             # Open and convert to RGBA to preserve transparency
