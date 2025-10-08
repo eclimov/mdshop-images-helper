@@ -24,7 +24,8 @@ def resize_pngs_in_folder(
             continue  # skip non-PNG files
 
         input_path = os.path.join(input_dir, filename)
-        output_path = os.path.join(output_dir, filename.split('#')[0] + '.png')
+        output_filename = filename.split('#')[0] + '.png'
+        output_path = os.path.join(output_dir, output_filename)
 
         try:
             # Open and convert to RGBA to preserve transparency
@@ -35,7 +36,7 @@ def resize_pngs_in_folder(
 
             # Save result
             resized.save(output_path, "PNG")
-            print(f"✅ Resized: {filename} → {size[0]}x{size[1]}")
+            print(f"✅ Resized: {filename} → {output_filename} {size[0]}x{size[1]}")
         except Exception as e:
             print(f"⚠️ Failed to process {filename}: {e}")
 
